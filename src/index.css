@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Café Mug - Luxurious Design System
+Inspired by premium café brands with warm, cozy, and sophisticated aesthetics
+All colors MUST be HSL for proper design system integration
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 28 12% 8%;
+    --foreground: 40 20% 92%;
+
+    /* Card & Surface Elements */
+    --card: 28 15% 12%;
+    --card-foreground: 40 18% 88%;
+
+    /* Popovers & Overlays */
+    --popover: 28 18% 10%;
+    --popover-foreground: 40 20% 90%;
+
+    /* Primary Brand Colors - Rich Coffee Brown */
+    --primary: 28 45% 15%;
+    --primary-foreground: 40 25% 95%;
+
+    /* Secondary - Warm Wood Tones */
+    --secondary: 35 25% 20%;
+    --secondary-foreground: 40 20% 90%;
+
+    /* Muted Elements */
+    --muted: 28 20% 18%;
+    --muted-foreground: 35 15% 65%;
+
+    /* Accent - Gold Premium Touch */
+    --accent: 45 85% 55%;
+    --accent-foreground: 28 25% 8%;
+
+    /* Interactive States */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 40 20% 95%;
+
+    /* Borders & Inputs */
+    --border: 28 25% 22%;
+    --input: 28 25% 18%;
+    --ring: 45 85% 55%;
+
+    /* Custom Café Design Tokens */
+    --coffee-dark: 28 35% 12%;
+    --coffee-medium: 28 40% 25%;
+    --coffee-light: 35 30% 45%;
+    --gold-light: 45 75% 65%;
+    --gold-dark: 45 85% 45%;
+    --cream: 40 30% 88%;
+    --wood-warm: 35 40% 35%;
+    --wood-light: 35 25% 55%;
+
+    /* Gradients */
+    --gradient-coffee: linear-gradient(135deg, hsl(var(--coffee-dark)), hsl(var(--coffee-medium)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold-light)));
+    --gradient-warm: linear-gradient(180deg, hsl(var(--coffee-medium)), hsl(var(--coffee-dark)));
+    --gradient-hero: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+
+    /* Shadows & Effects */
+    --shadow-luxury: 0 25px 50px -12px hsl(var(--coffee-dark) / 0.8);
+    --shadow-warm: 0 10px 30px -5px hsl(var(--coffee-medium) / 0.6);
+    --shadow-gold: 0 0 40px hsl(var(--gold-dark) / 0.3);
+    --glow-accent: 0 0 20px hsl(var(--accent) / 0.5);
+
+    /* Animations */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif;
+  }
+
+  /* Premium Typography */
+  .font-luxury {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-elegant {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    @apply backdrop-blur-md bg-card/80 border border-border/50;
+  }
+  
+  .glass-luxury {
+    @apply backdrop-blur-lg bg-card/70 border border-accent/20;
+    box-shadow: var(--shadow-warm), inset 0 1px 0 hsl(var(--accent) / 0.1);
+  }
+
+  /* Button variants */
+  .btn-luxury {
+    @apply bg-gradient-to-r from-accent to-gold-light text-accent-foreground px-8 py-4 rounded-lg font-semibold;
+    @apply hover:shadow-lg hover:scale-105 transition-all duration-300;
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .btn-ghost-luxury {
+    @apply border-2 border-accent text-accent px-8 py-4 rounded-lg font-semibold bg-transparent;
+    @apply hover:bg-accent hover:text-accent-foreground hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Card effects */
+  .card-luxury {
+    @apply glass-luxury rounded-2xl p-6;
+    box-shadow: var(--shadow-luxury);
+  }
+  
+  .card-hover {
+    @apply hover:scale-105 hover:-translate-y-2 transition-all duration-500;
+  }
+
+  /* Hero section styles */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  /* Animations */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .bg-gradient-coffee {
+    background: var(--gradient-coffee);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  /* Custom color utilities */
+  .text-coffee-light {
+    color: hsl(var(--coffee-light));
+  }
+  
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+  
+  .text-cream {
+    color: hsl(var(--cream));
+  }
+  
+  .bg-coffee-dark {
+    background-color: hsl(var(--coffee-dark));
+  }
+  
+  .bg-wood-warm {
+    background-color: hsl(var(--wood-warm));
+  }
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: var(--glow-accent);
+  }
+  to {
+    box-shadow: var(--glow-accent), var(--shadow-gold);
+  }
+}
+
+/* Smooth scrolling with offset for navigation */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
