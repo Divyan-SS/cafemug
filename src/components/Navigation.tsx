@@ -50,7 +50,7 @@ const Navigation = () => {
         onClick={() => scrollToSection('#hero')}
       >
         <img
-          src="src/assets/logo.png"
+          src="/assets/logo.png"
           alt="Café Mug Logo"
           className="h-[120px] w-[120px] object-contain mt-3" // ~72px height, adjustable
         />

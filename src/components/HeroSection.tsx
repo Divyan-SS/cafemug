@@ -46,7 +46,7 @@ const HeroSection = () => {
             <div className="flex items-center justify-center  mb-4">
               {/* Responsive Logo */}
               <img
-                src="/src/assets/logo.png"
+                src="/assets/logo.png"
                 alt="Café Mug Logo"
                 className="h-25 md:h-40 lg:h-40 w-30 mt-3 object-contain"
               />
